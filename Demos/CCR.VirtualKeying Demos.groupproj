@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BBE5E3E7-7991-4835-912F-B40D754C3C17}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FMX\FMXVirtualKeyingDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCL\VCLVirtualKeyingDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FMXVirtualKeyingDemo">
+        <MSBuild Projects="FMX\FMXVirtualKeyingDemo.dproj"/>
+    </Target>
+    <Target Name="FMXVirtualKeyingDemo:Clean">
+        <MSBuild Projects="FMX\FMXVirtualKeyingDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXVirtualKeyingDemo:Make">
+        <MSBuild Projects="FMX\FMXVirtualKeyingDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLVirtualKeyingDemo">
+        <MSBuild Projects="VCL\VCLVirtualKeyingDemo.dproj"/>
+    </Target>
+    <Target Name="VCLVirtualKeyingDemo:Clean">
+        <MSBuild Projects="VCL\VCLVirtualKeyingDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLVirtualKeyingDemo:Make">
+        <MSBuild Projects="VCL\VCLVirtualKeyingDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FMXVirtualKeyingDemo;VCLVirtualKeyingDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FMXVirtualKeyingDemo:Clean;VCLVirtualKeyingDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FMXVirtualKeyingDemo:Make;VCLVirtualKeyingDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

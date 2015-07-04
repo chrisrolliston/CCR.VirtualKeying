@@ -1,0 +1,70 @@
+object frmVirtualKeyPress: TfrmVirtualKeyPress
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'FMX Virtual Key Press Demo'
+  ClientHeight = 129
+  ClientWidth = 314
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 1
+  object lblCharsToSend: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Text = 'Characters to type:'
+  end
+  object edtCharsToType: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Text = #161'Hola! '#915#949#953#940'! '#1055#1088#1080#1074#1077#1090'!'
+    Position.X = 8.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btnTypeInEdit: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Type in Edit Box'
+    OnClick = btnTypeInEditClick
+  end
+  object btnTypeIn10Secs: TButton
+    Position.X = 144.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Type in 10 Seconds'
+    OnClick = btnTypeIn10SecsClick
+  end
+  object edtTarget: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 8.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btnDoAppExitHotkey: TButton
+    Position.X = 144.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Exit with Cmd+Q/Alt+F4'
+    OnClick = btnDoAppExitHotkeyClick
+  end
+  object tmrType: TTimer
+    Enabled = False
+    OnTimer = tmrTypeTimer
+    Left = 240
+    Top = 8
+  end
+end
