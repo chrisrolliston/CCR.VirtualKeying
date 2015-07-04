@@ -25,7 +25,7 @@ Example usage
       Sequence.Add(vkA, [ssCommand], [keDown, keUp]);
       {$ELSE}
       Sequence.Add(vkA, [ssCtrl], [keDown, keUp]);
-      {$END}
+      {$ENDIF}
       Sequence.Execute;
 
 TVirtualKeySequence reference
